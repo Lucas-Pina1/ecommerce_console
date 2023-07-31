@@ -41,11 +41,12 @@ public class App {
         System.out.println("Qual o sexo do pet? [1] - Macho ou [2] - femêa");
         int sex = sc.nextInt();
         System.out.println("Qual o nome do Pet ?");
+        sc.nextLine(); // clean buffer
         String nameOfPet = sc.nextLine();
         System.out.println("Qual o peso do pet ?");
-        double weigthOfPet = sc.nextDouble();
+        double petWeight = sc.nextDouble();
         System.out.println("Qual o valor por peso do pet ?");
-        double value = sc.nextDouble();
+        double valuePerPetWeight = sc.nextDouble();
 
         System.out.println("Agora que temos as informações, segue o relátorio referente ao serviço:");
 
@@ -55,20 +56,20 @@ public class App {
         System.out.println("----------   Informações do pet    -----------");
         System.out.printf("Nome do pet: %s %n", nameOfPet);
         if (sex == 1) {
-            System.out.printf("Sexo: Macho");
+            System.out.println("Sexo: Macho");
         }
         if (sex == 2) {
-            System.out.printf("Sexo: Femêa");
+            System.out.println("Sexo: Femêa");
         }
-        System.out.printf("Peso: %.2f %n", weigthOfPet);
+        System.out.printf("Peso: %.2f %n", petWeight);
 
         System.out.println("---------- Valor do Serviço ----------");
         if (sex == 1) {
-            double totalValue = (weigthOfPet * value) + (weigthOfPet * value * 15 / 100);
+            double totalValue = (petWeight * valuePerPetWeight) + (petWeight * valuePerPetWeight * 15 / 100);
             System.out.printf("O valor do serviço é: R$ %.2f", totalValue);
         }
         if (sex == 2) {
-            double totalValue = (weigthOfPet * value) + (weigthOfPet * value * 30 / 100);
+            double totalValue = (petWeight * valuePerPetWeight) + (petWeight * valuePerPetWeight * 30 / 100);
             System.out.printf("O valor do serviço é: R$ %.2f", totalValue);
         }
 
